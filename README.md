@@ -1,0 +1,1 @@
+# zabbix_adaptec_template
