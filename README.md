@@ -15,7 +15,7 @@ one adaptec adapter in server (i don't have servers with more fore testing). Now
 ### Zabbix server
 
 * Import template
-* Create and configure global macroses:
+* Create and configure global or template macroses:
   * {$ADAP_DISCOVERY_PERIOD} - adapters discovery period. I think you can set it nearly 1d (daily)
   * {$ADAP_HISTORY_PERIOD} - period of saving history for adapters data. For example 30d
   * {$ADAP_REQUEST_PERIOD} - period of requesting storage adapters data ( adapter,battery state, etc). 1h
@@ -27,7 +27,7 @@ one adaptec adapter in server (i don't have servers with more fore testing). Now
   * {$PD_DISCOVERY_PERIOD} - physical discs discovery period. 30m
   * {$PD_HISTORY_PERIOD} - period of saving history for physical discs data. 30d
   * {$PD_REQUEST_PERIOD} - period of requesting physical discs data. 5m
- * Set template macroses:
    * {$ADAP_THROTTLING_HB_PERIOD} - period of heartbit for throttling for adapter data
    * {$LD_THROTTLING_HB_PERIOD} - period of heartbit for throttling for logical discs data
    * {$PD_THROTTLING_HB_PERIOD} - period of heartbit for throttling for physical discs data.
+  
