@@ -35,4 +35,5 @@ one adaptec adapter in server (i don't have servers with more fore testing). Now
   
   * Copy arcconf utility (you can use version in diskutils_windows.zip) in place where you store things like this
   * Copy adaptec_raid_win.conf in zabbix_agent configs folder
+  * Copy adaptec.ps1 in zabbix_agent scripts folder
   * Edit arcconf paths in adaptec_raid_win.conf.
