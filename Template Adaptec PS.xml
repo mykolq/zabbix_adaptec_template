@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.2</version>
-    <date>2019-05-28T13:47:18Z</date>
+    <date>2019-05-28T13:57:24Z</date>
     <groups>
         <group>
             <name>Adaptec RAID</name>
@@ -1149,7 +1149,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template Adaptec PS:adaptec.zmm.state.regexp(&quot;(.*Optimal.*)&quot;)}=0 and ({Template Adaptec PS:adaptec.zmm.state.regexp(ZMM not installed)}=0 or {Template Adaptec PS:adaptec.zmm.state.regexp(no battery installed)}=0)</expression>
+            <expression>{Template Adaptec PS:adaptec.zmm.state.regexp(&quot;(.*Optimal.*)&quot;)}=0 and {Template Adaptec PS:adaptec.zmm.state.regexp(.*no.*installed.*)}=0</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Adaptec controller battery state is &quot;{ITEM.LASTVALUE}&quot;</name>
