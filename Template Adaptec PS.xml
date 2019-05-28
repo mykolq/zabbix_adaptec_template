@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.2</version>
-    <date>2019-05-28T12:42:41Z</date>
+    <date>2019-05-28T13:40:53Z</date>
     <groups>
         <group>
             <name>Adaptec RAID</name>
@@ -1078,12 +1078,12 @@
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Online)}=0</expression>
+                            <expression>{Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Online)}=0 and {Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Global Hot-Spare)}=0</expression>
                             <recovery_mode>1</recovery_mode>
                             <recovery_expression>{Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Online)}=1</recovery_expression>
                             <name>Adaptec physical disk &quot;{#SLOT}&quot; state is {ITEM.LASTVALUE}</name>
@@ -1094,7 +1094,7 @@
                             <priority>3</priority>
                             <description/>
                             <type>0</type>
-                            <manual_close>0</manual_close>
+                            <manual_close>1</manual_close>
                             <dependencies/>
                             <tags/>
                         </trigger_prototype>
@@ -1149,7 +1149,7 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template Adaptec PS:adaptec.zmm.state.regexp(&quot;(.*Optimal.*)&quot;)}=0 and {Template Adaptec PS:adaptec.zmm.state.regexp(ZMM not installed)}=0</expression>
+            <expression>{Template Adaptec PS:adaptec.zmm.state.regexp(&quot;(.*Optimal.*)&quot;)}=0 and ({Template Adaptec PS:adaptec.zmm.state.regexp(ZMM not installed)}=0 or {Template Adaptec PS:adaptec.zmm.state.regexp(no battery installed)}=0)</expression>
             <recovery_mode>0</recovery_mode>
             <recovery_expression/>
             <name>Adaptec controller battery state is &quot;{ITEM.LASTVALUE}&quot;</name>
