@@ -31,3 +31,8 @@ one adaptec adapter in server (i don't have servers with more fore testing). Now
    * {$LD_THROTTLING_HB_PERIOD} - period of heartbit for throttling for logical discs data
    * {$PD_THROTTLING_HB_PERIOD} - period of heartbit for throttling for physical discs data.
   
+   ### Windows
+  
+  * Copy arcconf utility (you can use version in diskutils_windows.zip) in place where you store things like this
+  * Copy adaptec_raid_win.conf in zabbix_agent configs folder
+  * Edit arcconf paths in adaptec_raid_win.conf.
