@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>4.2</version>
-    <date>2019-05-28T13:40:53Z</date>
+    <date>2019-05-28T13:47:18Z</date>
     <groups>
         <group>
             <name>Adaptec RAID</name>
@@ -1085,7 +1085,7 @@
                         <trigger_prototype>
                             <expression>{Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Online)}=0 and {Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Global Hot-Spare)}=0</expression>
                             <recovery_mode>1</recovery_mode>
-                            <recovery_expression>{Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Online)}=1</recovery_expression>
+                            <recovery_expression>{Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Online)}=1 or  {Template Adaptec PS:adaptec.pd.state.[&quot;{#SLOT}&quot;].str(Global Hot-Spare)}=1</recovery_expression>
                             <name>Adaptec physical disk &quot;{#SLOT}&quot; state is {ITEM.LASTVALUE}</name>
                             <correlation_mode>0</correlation_mode>
                             <correlation_tag/>
